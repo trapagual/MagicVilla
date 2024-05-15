@@ -8,14 +8,26 @@ namespace MagicVilla_API.Modelos.DTOs
         [Required]
         [MaxLength(30)]
         public string Nombre { get; set; }
+        public int Ocupantes { get; set; }
+        public int Metros2 { get; set; }
+        public string Detalle { get; set; }
+        [Required] public double Tarifa { get; set; }
+        public string ImagenURL { get; set; }
+        public string Amenidad { get; set; }
 
 
-        public VillaDto(int Id, string Nombre)
+
+
+        public VillaDto(int id, string nombre, int ocupantes, int metros2, string detalle, double tarifa, string imagenURL, string amenidad)
         {
-            this.Id = Id;
-            this.Nombre  = Nombre;
+            Id = id;
+            Nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
+            Ocupantes = ocupantes;
+            Metros2 = metros2;
+            Detalle = detalle;
+            Tarifa = tarifa;
+            ImagenURL = imagenURL;
+            Amenidad = amenidad;
         }
-
-
     }
 }
