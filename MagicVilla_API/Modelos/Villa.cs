@@ -5,6 +5,8 @@
         public int Id { get; set; }
         public string Nombre { get; set; }
 
+        public DateTime FechaCreacion { get; set; }
+
         public Villa(int Id, string Nombre)
         {
             this.Id = Id;
